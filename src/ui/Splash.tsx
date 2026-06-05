@@ -33,7 +33,7 @@ export type SplashProps = {
 // Wordmark font tiers, widest first. `measureText` is cheap (table lookup).
 const TIERS: ASCIIFontName[] = ["block", "slick", "tiny"]
 const pickFont = (innerW: number): ASCIIFontName =>
-  TIERS.find(f => measureText({ text: "HERM", font: f }).width <= innerW) ?? "tiny"
+  TIERS.find(f => measureText({ text: "PATRICK", font: f }).width <= innerW) ?? "tiny"
 
 const clip = (s: string, w: number) =>
   [...s].length <= w ? s : [...s].slice(0, Math.max(1, w - 1)).join("") + "…"
@@ -86,7 +86,7 @@ export function Splash(p: SplashProps) {
              width={inner.w} height={inner.h}
              flexDirection="column" alignItems="center" justifyContent="center">
           <box>
-            <ascii-font text="HERM" font={font}
+            <ascii-font text="PATRICK" font={font}
               color={[theme.accent, theme.textMuted]} selectable={false} />
           </box>
           <box height={1}>
